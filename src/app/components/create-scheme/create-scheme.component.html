@@ -1,0 +1,753 @@
+<section *ngIf="modeService.createScheme" class="main-content">
+    <h2 class="heading">Scheme & Unit Data</h2>
+
+    <div style="background-color: #FFC9FE;border-radius: 10px; padding: 1rem;margin-bottom: 1rem;">
+        <span style="font-weight: bold;font-size: medium;">Type Information</span>
+        <form [formGroup]="schemeFormGroup" class="row g-2 mt-2">
+
+            <div class="col-2">
+                <label for="v_SCHEME_CODE">Scheme & Type Code</label>
+                <input class="form-control" type="text" id="v_SCHEME_CODE" formControlName="v_SCHEME_CODE" required>
+            </div>
+
+            <div class="col-2">
+                <label for="v_DIVISION">Name of the Division</label>
+                <input class="form-control" type="text" id="v_DIVISION" formControlName="v_DIVISION" required>
+            </div>
+
+            <div class="col-5">
+                <label for="v_SCHEME_NAME">Scheme Name</label>
+                <input class="form-control" type="text" id="v_SCHEME_NAME" formControlName="v_SCHEME_NAME" required>
+            </div>
+
+            <div class="col-1">
+                <label>Type</label>
+                <select class="form-select" aria-label="Default select example" id="v_SCHEME_TYPE" formControlName="v_SCHEME_TYPE" >
+                    <option selected>Select</option>
+                    <option value="HIG">HIG</option>
+                    <option value="MIG">MIG</option>
+                    <option value="LIG">LIG</option>
+                    <option value="EWS">EWS</option>
+                </select>
+            </div>
+
+            <div class="col-1">
+                <label for="v_UNIT_TYPE">Unit Type</label>
+                <select class="form-select" id="v_UNIT_TYPE" formControlName="v_UNIT_TYPE" required>
+                    <option value="Flat">Flat</option>
+                    <option value="House">House</option>
+                    <option value="Plot">Plot</option>
+                </select>
+            </div>
+
+            <div class="col-1">
+                <label for="n_TOTAL_DEVELOPED_UNITS">Total Units</label>
+                <input class="form-control" type="text" id="n_TOTAL_UNITS" formControlName="n_TOTAL_UNITS" required>
+            </div>
+
+            <div class="col-2">
+                <label for="v_CR_CODE">Scheme place</label>
+                <input class="form-control" type="text" id="v_SPLACE" formControlName="v_SPLACE" required>
+            </div>
+
+            <div class="col-2">
+                <label for="v_CR_CODE">District</label>
+                <input class="form-control" type="text" id="v_DISTRICT" formControlName="v_DISTRICT" required>
+            </div>
+
+            <div class="col-1">
+                <label for="v_CR_CODE">Reservation</label>
+                <select class="form-select" id="v_RESERVATION_STATUS" formControlName="v_RESERVATION_STATUS" required>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </div>
+
+            <div class="col-2">
+                <label for="d_FROM_DATE">From Date</label>
+                <input class="form-control" type="date" id="v_FROM_DATE" formControlName="v_FROM_DATE" required>
+            </div>
+
+            <div class="col-2">
+                <label for="d_TO_DATE">To Date</label>
+                <input class="form-control" type="date" id="v_TO_DATE" formControlName="v_TO_DATE" required>
+            </div>
+
+            <div class="col-2">
+                <label for="v_PROJECT_STATUS">Project Status</label>
+                <select class="form-select" id="v_PROJECT_STATUS" formControlName="v_PROJECT_STATUS">
+                    <option value="Yet to be Started">Yet to be Started</option>
+                    <option value="Ongoing">Ongoing</option>
+                    <option value="Completed">Completed</option>
+                </select>
+            </div>
+
+            <div class="col-1">
+                <label class="label-ellipsis" for="v_MODE_OF_ALLOCATION" data-toggle="tooltip" data-placement="top"
+                    title="Mode of Allotment">Mode of Allotment</label>
+                <select class="form-select" id="v_MODE_OF_ALLOCATION" formControlName="v_MODE_OF_ALLOCATION">
+                    <option value="SFS">SFS</option>
+                    <option value="OR">OR</option>
+                    <option value="HP">HP</option>
+                </select>
+            </div>
+
+            <div class="col-2">
+                <label for="v_CUT_OFF_DATE">Cut-off Date (SP)</label>
+                <input class="form-control" type="date" id="v_CUT_OFF_DATE" formControlName="v_CUT_OFF_DATE" required>
+            </div>
+
+            <div class="col-2">
+                <label for="v_CR_CODE">Original Selling Price</label>
+                <input class="form-control" type="text" id="n_SELLING_PRICE" formControlName="n_SELLING_PRICE" required>
+            </div>
+
+            <div class="col-2">
+                <label for="v_CR_CODE">Scheme Interest</label>
+                <input class="form-control" type="text" id="n_RATE_OF_SCHEME_INTEREST" formControlName="n_RATE_OF_SCHEME_INTEREST" required>
+            </div>
+
+            <div class="col-1">
+                <label class="label-ellipsis" for="v_REPAYMENT_PERIOD" data-toggle="tooltip" data-placement="top"
+                    title="Repayment Period">Repayment Period</label>
+                <input class="form-control" type="text" id="v_REPAYMENT_PERIOD" formControlName="v_REPAYMENT_PERIOD" required>
+            </div>
+
+            <div class="col-1">
+                <label for="v_CR_CODE">Selling Extent</label>
+                <input class="form-control" type="text" id="v_SELLING_EXTENT" formControlName="v_SELLING_EXTENT" required>
+            </div>
+
+            <div class="col-1">
+                <label for="v_CR_CODE">Plinth Area</label>
+                <input class="form-control" type="text" id="v_PLINTH_AREA" formControlName="v_PLINTH_AREA" required>
+            </div>
+
+            <div class="col-1">
+                <label for="v_CR_CODE">UDS</label>
+                <input class="form-control" type="text" id="v_UDS_AREA" formControlName="v_UDS_AREA" required>
+            </div>
+
+            <div class="col-1">
+                <label for="v_CR_CODE">Tentative Land</label>
+                <select class="form-select" id="v_TENTATIVE_LAND" formControlName="v_TENTATIVE_LAND">
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </div>
+
+            <div class="col-1">
+                <label for="v_CR_CODE">Final Land</label>
+                <input class="form-control" type="text" id="v_FINAL_LAND" formControlName="v_FINAL_LAND" required>
+            </div>
+
+            <div class="col-2">
+                <label for="n_TENTATIVE_LAND_COST">Tentative Land Cost</label>
+                <input class="form-control" type="text" id="n_TENTATIVE_LAND_COST" formControlName="n_TENTATIVE_LAND_COST"
+                    required>
+            </div>
+
+            <div class="col-2">
+                <label for="n_FINAL_LAND_COST">Final Land Cost</label>
+                <input class="form-control" type="text" id="n_FINAL_LAND_COST" formControlName="n_FINAL_LAND_COST" required>
+            </div>
+
+            <div class="col-2">
+                <label for="v_FINAL_CUTOFF_DATE">FLC Cut-off Date</label>
+                <input class="form-control" type="date" id="v_FINAL_CUTOFF_DATE" formControlName="v_FINAL_CUTOFF_DATE" required>
+            </div>
+
+            <div class="col-1">
+                <label for="n_PROFIT_ON_LAND">Profit</label>
+                <input class="form-control" type="text" id="n_PROFIT_ON_LAND" formControlName="n_PROFIT_ON_LAND" required>
+            </div>
+
+            <div class="col-1">
+                <label for="v_START_FROM">Start From</label>
+                <input class="form-control" type="text" id="v_START_FROM" formControlName="v_START_FROM" required>
+            </div>
+
+            <div class="col-5">
+                <label for="v_REMARKS">Remarks</label>
+                <input class="form-control" type="text" id="v_REMARKS" formControlName="v_REMARKS" required>
+            </div>
+
+        </form>
+    </div>
+
+    <div style="background-color: #FFC9FE;border-radius: 10px; padding: 1rem;margin-bottom: 1rem;">
+        <span style="font-weight: bold;font-size: medium;">Type Updated Value</span>
+        <form [formGroup]="unitFormGroup" class="row g-2 mt-2">
+
+            <div class="col-1">
+                <label for="n_TOTAL_ALLOTTED_UNITS">Allotted Units</label>
+                <input class="form-control" type="text" id="n_TOTAL_ALLOTTED_UNITS" formControlName="n_TOTAL_ALLOTTED_UNITS"
+                    readonly>
+            </div>
+
+            <div class="col-1">
+                <label for="n_TOTAL_UNSOLD_UNITS">Unsold Units</label>
+                <input class="form-control" type="text" id="n_TOTAL_UNSOLD_UNITS" formControlName="n_TOTAL_UNSOLD_UNITS" readonly>
+            </div>
+
+            <div class="col-1">
+                <label for="n_TOTAL_ALLOTTED_UNITS_FOR_OUTRIGHT">OR Alotted</label>
+                <input class="form-control" type="text" id="n_TOTAL_ALLOTTED_UNITS_FOR_OUTRIGHT"
+                    formControlName="n_TOTAL_ALLOTTED_UNITS_FOR_OUTRIGHT" readonly>
+            </div>
+
+            <div class="col-1">
+                <label for="n_TOTAL_ALLOTTED_UNITS_FOR_HIRE_PURCHASE">HP Allotted</label>
+                <input class="form-control" type="text" id="n_TOTAL_ALLOTTED_UNITS_FOR_HIRE_PURCHASE"
+                    formControlName="n_TOTAL_ALLOTTED_UNITS_FOR_HIRE_PURCHASE" readonly>
+            </div>
+
+            <div class="col-1">
+                <label for="n_TOTAL_ALLOTTED_UNITS_FOR_SFS">SFS Allotted</label>
+                <input class="form-control" type="text" id="n_TOTAL_ALLOTTED_UNITS_FOR_SFS"
+                    formControlName="n_TOTAL_ALLOTTED_UNITS_FOR_SFS" readonly>
+            </div>
+
+            <div class="col-2">
+                <label for="n_TOTAL_ARREARS_EMI">Arrear EMI</label>
+                <input class="form-control" type="text" id="n_TOTAL_ARREARS_EMI" formControlName="n_TOTAL_ARREARS_EMI" readonly>
+            </div>
+
+            <div class="col-2">
+                <label for="n_TOTAL_CURRENT_EMI">Current EMI</label>
+                <input class="form-control" type="text" id="n_TOTAL_CURRENT_EMI" formControlName="n_TOTAL_CURRENT_EMI" readonly>
+            </div>
+
+            <div class="col-2">
+                <label for="n_TOTAL_BALANCE_EMI">Balance EMI</label>
+                <input class="form-control" type="text" id="n_TOTAL_BALANCE_EMI" formControlName="n_TOTAL_BALANCE_EMI" readonly>
+            </div>
+
+            <div class="col-1">
+                <label for="n_TOTAL_LIVE_CASES_FOR_HIRE">Live Units</label>
+                <input class="form-control" type="text" id="n_TOTAL_LIVE_CASES_FOR_HIRE"
+                    formControlName="n_TOTAL_LIVE_CASES_FOR_HIRE" readonly>
+            </div>
+
+            <div class="col-2">
+                <label for="n_FULL_COST_PAID">Full cost paid</label>
+                <input class="form-control" type="text" id="n_FULL_COST_PAID"
+                    formControlName="n_FULL_COST_PAID" readonly>
+            </div>
+
+            <div class="col-2">
+                <label for="n_TOTAL_NO_OF_SALE_DEED_ISSUED">Sale Deed Issued</label>
+                <input class="form-control" type="text" id="n_TOTAL_NO_OF_SALE_DEED_ISSUED" formControlName="n_TOTAL_NO_OF_SALE_DEED_ISSUED" readonly>
+            </div>
+
+            <div class="col-2">
+                <label for="n_TOTAL_RIPPED_UNIT">Ripe Units</label>
+                <input class="form-control" type="text" id="n_TOTAL_RIPPED_UNIT" formControlName="n_TOTAL_RIPPED_UNIT" readonly>
+            </div>
+        </form>
+    </div>
+
+    <div class="button">
+        <button type="submit" class="btn create" style="background-color: #470A3C;color: white;"
+            (click)="onSubmit()">Create</button>
+    </div>
+
+</section>
+
+<section *ngIf="modeService.editScheme" class="main-content">
+    <div class="editScheme">
+        <h2 class="heading w-25">Edit Scheme</h2>
+        <div>
+            <button type="submit" class="btn create" style="background-color: #470A3C;color: white;"
+                (click)="onUpdate(id)">Update</button>
+            <button type="button" class="btn btn-danger" (click)="onDelete(id)">Delete</button>
+        </div>
+    </div>
+    <h2 class="heading">Scheme & Unit Data</h2>
+
+    <div style="background-color: #FFC9FE;border-radius: 10px; padding: 1rem;margin-bottom: 1rem;">
+        <span style="font-weight: bold;font-size: medium;">Type Information</span>
+        <form [formGroup]="schemeDataForm" class="row g-2 mt-2">
+
+            <div class="col-2">
+                <label for="v_SCHEME_CODE">Scheme & Type Code</label>
+                <input class="form-control" type="text" id="v_SCHEME_CODE" formControlName="v_SCHEME_CODE">
+            </div>
+
+            <div class="col-2">
+                <label for="v_DIVISION">Name of the Division</label>
+                <input class="form-control" type="text" id="v_DIVISION" formControlName="v_DIVISION" required>
+            </div>
+
+            <div class="col-5">
+                <label for="v_SCHEME_NAME">Scheme Name</label>
+                <input class="form-control" type="text" id="v_SCHEME_NAME" formControlName="v_SCHEME_NAME" required>
+            </div>
+
+            <div class="col-1">
+                <label>Type</label>
+                <select class="form-select" aria-label="Default select example" id="v_SCHEME_TYPE" formControlName="v_SCHEME_TYPE" >
+                    <option selected>Select</option>
+                    <option value="HIG">HIG</option>
+                    <option value="MIG">MIG</option>
+                    <option value="LIG">LIG</option>
+                    <option value="EWS">EWS</option>
+                </select>
+            </div>
+
+            <div class="col-1">
+                <label for="v_UNIT_TYPE">Unit Type</label>
+                <select class="form-select" id="v_UNIT_TYPE" formControlName="v_UNIT_TYPE">
+                    <option value="Flat">Flat</option>
+                    <option value="House">House</option>
+                    <option value="Plot">Plot</option>
+                </select>
+            </div>
+
+            <div class="col-1">
+                <label for="n_TOTAL_DEVELOPED_UNITS">Total Units</label>
+                <input class="form-control" type="text" id="n_TOTAL_UNITS" formControlName="n_TOTAL_UNITS">
+            </div>
+
+            <div class="col-2">
+                <label for="v_CR_CODE">Scheme place</label>
+                <input class="form-control" type="text" id="v_SPLACE" formControlName="v_SPLACE">
+            </div>
+
+            <div class="col-2">
+                <label for="v_CR_CODE">District</label>
+                <input class="form-control" type="text" id="v_DISTRICT" formControlName="v_DISTRICT">
+            </div>
+
+            <div class="col-1">
+                <label for="v_CR_CODE">Reservation</label>
+                <select class="form-select" id="v_RESERVATION_STATUS" formControlName="v_RESERVATION_STATUS">
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </div>
+
+            <div class="col-2">
+                <label for="d_FROM_DATE">From Date</label>
+                <input class="form-control" type="date" id="v_FROM_DATE" formControlName="v_FROM_DATE" required>
+            </div>
+
+            <div class="col-2">
+                <label for="d_TO_DATE">To Date</label>
+                <input class="form-control" type="date" id="v_TO_DATE" formControlName="v_TO_DATE" required>
+            </div>
+
+            <div class="col-2">
+                <label for="v_PROJECT_STATUS">Project Status</label>
+                <select class="form-select" id="v_PROJECT_STATUS" formControlName="v_PROJECT_STATUS">
+                    <option value="Yet to be Started">Yet to be Started</option>
+                    <option value="Ongoing">Ongoing</option>
+                    <option value="Completed">Completed</option>
+                </select>
+            </div>
+
+            <div class="col-1">
+                <label class="label-ellipsis" for="v_MODE_OF_ALLOCATION" data-toggle="tooltip" data-placement="top"
+                    title="Mode of Allotment">Mode of Allotment</label>
+                <select class="form-select" id="v_MODE_OF_ALLOCATION" formControlName="v_MODE_OF_ALLOCATION">
+                    <option value="SFS">SFS</option>
+                    <option value="OR">OR</option>
+                    <option value="HP">HP</option>
+                </select>
+            </div>
+
+            <div class="col-2">
+                <label for="v_CUT_OFF_DATE">Cut-off Date (SP)</label>
+                <input class="form-control" type="date" id="v_CUT_OFF_DATE" formControlName="v_CUT_OFF_DATE" required>
+            </div>
+
+            <div class="col-2">
+                <label for="v_CR_CODE">Original Selling Price</label>
+                <input class="form-control" type="text" id="n_SELLING_PRICE" formControlName="n_SELLING_PRICE" required>
+            </div>
+
+            <div class="col-2">
+                <label for="v_CR_CODE">Scheme Interest</label>
+                <input class="form-control" type="text" id="n_RATE_OF_SCHEME_INTEREST" formControlName="n_RATE_OF_SCHEME_INTEREST" required>
+            </div>
+
+            <div class="col-1">
+                <label class="label-ellipsis" for="v_REPAYMENT_PERIOD" data-toggle="tooltip" data-placement="top"
+                    title="Repayment Period">Repayment Period</label>
+                <input class="form-control" type="text" id="v_REPAYMENT_PERIOD" formControlName="v_REPAYMENT_PERIOD" required>
+            </div>
+
+            <div class="col-1">
+                <label for="v_CR_CODE">Selling Extent</label>
+                <input class="form-control" type="text" id="v_SELLING_EXTENT" formControlName="v_SELLING_EXTENT" required>
+            </div>
+
+            <div class="col-1">
+                <label for="v_CR_CODE">Plinth Area</label>
+                <input class="form-control" type="text" id="v_PLINTH_AREA" formControlName="v_PLINTH_AREA" required>
+            </div>
+
+            <div class="col-1">
+                <label for="v_CR_CODE">UDS</label>
+                <input class="form-control" type="text" id="v_UDS_AREA" formControlName="v_UDS_AREA" required>
+            </div>
+
+            <div class="col-1">
+                <label for="v_CR_CODE">Tentative Land</label>
+                <select class="form-select" id="v_TENTATIVE_LAND" formControlName="v_TENTATIVE_LAND">
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </div>
+
+            <div class="col-1">
+                <label for="v_CR_CODE">Final Land</label>
+                <input class="form-control" type="text" id="v_FINAL_LAND" formControlName="v_FINAL_LAND" required>
+            </div>
+
+            <div class="col-2">
+                <label for="n_TENTATIVE_LAND_COST">Tentative Land Cost</label>
+                <input class="form-control" type="text" id="n_TENTATIVE_LAND_COST" formControlName="n_TENTATIVE_LAND_COST"
+                    required>
+            </div>
+
+            <div class="col-2">
+                <label for="n_FINAL_LAND_COST">Final Land Cost</label>
+                <input class="form-control" type="text" id="n_FINAL_LAND_COST" formControlName="n_FINAL_LAND_COST" required>
+            </div>
+
+            <div class="col-2">
+                <label for="v_FINAL_CUTOFF_DATE">FLC Cut-off Date</label>
+                <input class="form-control" type="date" id="v_FINAL_CUTOFF_DATE" formControlName="v_FINAL_CUTOFF_DATE" required>
+            </div>
+
+            <div class="col-1">
+                <label for="n_PROFIT_ON_LAND">Profit</label>
+                <input class="form-control" type="text" id="n_PROFIT_ON_LAND" formControlName="n_PROFIT_ON_LAND" required>
+            </div>
+
+            <div class="col-1">
+                <label for="v_START_FROM">Start From</label>
+                <input class="form-control" type="text" id="v_START_FROM" formControlName="v_START_FROM" required>
+            </div>
+
+
+
+            <div class="col-5">
+                <label for="v_REMARKS">Remarks</label>
+                <input class="form-control" type="text" id="v_REMARKS" formControlName="v_REMARKS" required>
+            </div>
+
+        </form>
+    </div>
+
+    <div style="background-color: #FFC9FE;border-radius: 10px; padding: 1rem;margin-bottom: 1rem;">
+        <span style="font-weight: bold;font-size: medium;">Type Updated Value</span>
+        <form [formGroup]="unitDataForm" class="row g-2 mt-2">
+
+            <div class="col-1">
+                <label for="n_TOTAL_ALLOTTED_UNITS">Allotted Units</label>
+                <input class="form-control" type="text" id="n_TOTAL_ALLOTTED_UNITS" formControlName="n_TOTAL_ALLOTTED_UNITS"
+                    readonly>
+            </div>
+
+            <div class="col-1">
+                <label for="n_TOTAL_UNSOLD_UNITS">Unsold Units</label>
+                <input class="form-control" type="text" id="n_TOTAL_UNSOLD_UNITS" formControlName="n_TOTAL_UNSOLD_UNITS" readonly>
+            </div>
+
+            <div class="col-1">
+                <label for="n_TOTAL_ALLOTTED_UNITS_FOR_OUTRIGHT">OR Alotted</label>
+                <input class="form-control" type="text" id="n_TOTAL_ALLOTTED_UNITS_FOR_OUTRIGHT"
+                    formControlName="n_TOTAL_ALLOTTED_UNITS_FOR_OUTRIGHT" readonly>
+            </div>
+
+            <div class="col-1">
+                <label for="n_TOTAL_ALLOTTED_UNITS_FOR_HIRE_PURCHASE">HP Allotted</label>
+                <input class="form-control" type="text" id="n_TOTAL_ALLOTTED_UNITS_FOR_HIRE_PURCHASE"
+                    formControlName="n_TOTAL_ALLOTTED_UNITS_FOR_HIRE_PURCHASE" readonly>
+            </div>
+
+            <div class="col-1">
+                <label for="n_TOTAL_ALLOTTED_UNITS_FOR_SFS">SFS Allotted</label>
+                <input class="form-control" type="text" id="n_TOTAL_ALLOTTED_UNITS_FOR_SFS"
+                    formControlName="n_TOTAL_ALLOTTED_UNITS_FOR_SFS" readonly>
+            </div>
+
+            <div class="col-2">
+                <label for="n_TOTAL_ARREARS_EMI">Arrear EMI</label>
+                <input class="form-control" type="text" id="n_TOTAL_ARREARS_EMI" formControlName="n_TOTAL_ARREARS_EMI" readonly>
+            </div>
+
+            <div class="col-2">
+                <label for="n_TOTAL_CURRENT_EMI">Current EMI</label>
+                <input class="form-control" type="text" id="n_TOTAL_CURRENT_EMI" formControlName="n_TOTAL_CURRENT_EMI" readonly>
+            </div>
+
+            <div class="col-2">
+                <label for="n_TOTAL_BALANCE_EMI">Balance EMI</label>
+                <input class="form-control" type="text" id="n_TOTAL_BALANCE_EMI" formControlName="n_TOTAL_BALANCE_EMI" readonly>
+            </div>
+
+            <div class="col-1">
+                <label for="n_TOTAL_LIVE_CASES_FOR_HIRE">Live Units</label>
+                <input class="form-control" type="text" id="n_TOTAL_LIVE_CASES_FOR_HIRE"
+                    formControlName="n_TOTAL_LIVE_CASES_FOR_HIRE" readonly>
+            </div>
+
+            <div class="col-2">
+                <label for="n_FULL_COST_PAID">Full cost paid</label>
+                <input class="form-control" type="text" id="n_FULL_COST_PAID"
+                    formControlName="n_FULL_COST_PAID" readonly>
+            </div>
+
+            <div class="col-2">
+                <label for="n_TOTAL_NO_OF_SALE_DEED_ISSUED">Sale Deed Issued</label>
+                <input class="form-control" type="text" id="n_TOTAL_NO_OF_SALE_DEED_ISSUED" formControlName="n_TOTAL_NO_OF_SALE_DEED_ISSUED" readonly>
+            </div>
+
+            <div class="col-2">
+                <label for="n_TOTAL_RIPPED_UNIT">Ripe Units</label>
+                <input class="form-control" type="text" id="n_TOTAL_RIPPED_UNIT" formControlName="n_TOTAL_RIPPED_UNIT" readonly>
+            </div>
+        </form>
+    </div>
+
+</section>
+
+<section *ngIf="modeService.viewScheme" class="main-content">
+    <h2 class="heading">View Scheme</h2>
+
+    <h2 class="heading">Scheme & Unit Data</h2>
+
+    <div style="background-color: #FFC9FE;border-radius: 10px; padding: 1rem;margin-bottom: 1rem;">
+        <span style="font-weight: bold;font-size: medium;">Type Information</span>
+        <form [formGroup]="schemeDataForm" class="row g-2 mt-2">
+
+            <div class="col-2">
+                <label for="v_SCHEME_CODE">Scheme & Type Code</label>
+                <input class="form-control" type="text" id="v_SCHEME_CODE" formControlName="v_SCHEME_CODE" readonly>
+            </div>
+
+            <div class="col-2">
+                <label for="v_DIVISION">Name of the Division</label>
+                <input class="form-control" type="text" id="v_DIVISION" formControlName="v_DIVISION" readonly>
+            </div>
+
+            <div class="col-5">
+                <label for="v_SCHEME_NAME">Scheme Name</label>
+                <input class="form-control" type="text" id="v_SCHEME_NAME" formControlName="v_SCHEME_NAME"  readonly>
+            </div>
+
+            <div class="col-1">
+                <label>Type</label>
+                <input class="form-control" type="text" id="v_SCHEME_TYPE" formControlName="v_SCHEME_TYPE" readonly>
+
+            </div>
+
+            <div class="col-1">
+                <label for="v_UNIT_TYPE">Unit Type</label>
+                <input class="form-control" type="text"  id="v_UNIT_TYPE" formControlName="v_UNIT_TYPE" readonly>
+
+
+            </div>
+
+            <div class="col-1">
+                <label for="n_TOTAL_DEVELOPED_UNITS">Total Units</label>
+                <input class="form-control" type="text" id="n_TOTAL_UNITS" formControlName="n_TOTAL_UNITS" readonly>
+            </div>
+
+            <div class="col-2">
+                <label for="v_CR_CODE">Scheme place</label>
+                <input class="form-control" type="text" id="v_SPLACE" formControlName="v_SPLACE" readonly>
+            </div>
+
+            <div class="col-2">
+                <label for="v_CR_CODE">District</label>
+                <input class="form-control" type="text" id="v_DISTRICT" formControlName="v_DISTRICT" readonly>
+            </div>
+
+            <div class="col-1">
+                <label for="v_CR_CODE">Reservation</label>
+                <input class="form-control" type="text"   id="v_RESERVATION_STATUS" formControlName="v_RESERVATION_STATUS" readonly>
+
+            </div>
+
+            <div class="col-2">
+                <label for="d_FROM_DATE">From Date</label>
+                <input class="form-control" type="date" id="v_FROM_DATE" formControlName="v_FROM_DATE" readonly>
+            </div>
+
+            <div class="col-2">
+                <label for="d_TO_DATE">To Date</label>
+                <input class="form-control" type="date" id="v_TO_DATE" formControlName="v_TO_DATE" readonly>
+            </div>
+
+            <div class="col-2">
+                <label for="v_PROJECT_STATUS">Project Status</label>
+                <input class="form-control" type="text"  id="v_PROJECT_STATUS" formControlName="v_PROJECT_STATUS"  readonly>
+
+
+            </div>
+
+            <div class="col-1">
+                <label class="label-ellipsis" for="v_MODE_OF_ALLOCATION" data-toggle="tooltip" data-placement="top"
+                    title="Mode of Allotment">Mode of Allotment</label>
+                    <input class="form-control" type="text"  id="v_MODE_OF_ALLOCATION" formControlName="v_MODE_OF_ALLOCATION"  readonly>
+
+
+            </div>
+
+            <div class="col-2">
+                <label for="v_CUT_OFF_DATE">Cut-off Date (SP)</label>
+                <input class="form-control" type="date" id="v_CUT_OFF_DATE" formControlName="v_CUT_OFF_DATE" readonly>
+            </div>
+
+            <div class="col-2">
+                <label for="v_CR_CODE">Original Selling Price</label>
+                <input class="form-control" type="text" id="n_SELLING_PRICE" formControlName="n_SELLING_PRICE" readonly>
+            </div>
+
+            <div class="col-2">
+                <label for="v_CR_CODE">Scheme Interest</label>
+                <input class="form-control" type="text" id="n_RATE_OF_SCHEME_INTEREST" formControlName="n_RATE_OF_SCHEME_INTEREST" readonly>
+            </div>
+
+            <div class="col-1">
+                <label class="label-ellipsis" for="v_REPAYMENT_PERIOD" data-toggle="tooltip" data-placement="top"
+                    title="Repayment Period">Repayment Period</label>
+                <input class="form-control" type="text" id="v_REPAYMENT_PERIOD" formControlName="v_REPAYMENT_PERIOD" readonly>
+            </div>
+
+            <div class="col-1">
+                <label for="v_CR_CODE">Selling Extent</label>
+                <input class="form-control" type="text" id="v_SELLING_EXTENT" formControlName="v_SELLING_EXTENT" readonly>
+            </div>
+
+            <div class="col-1">
+                <label for="v_CR_CODE">Plinth Area</label>
+                <input class="form-control" type="text" id="v_PLINTH_AREA" formControlName="v_PLINTH_AREA" readonly>
+            </div>
+
+            <div class="col-1">
+                <label for="v_CR_CODE">UDS</label>
+                <input class="form-control" type="text" id="v_UDS_AREA" formControlName="v_UDS_AREA" readonly>
+            </div>
+
+            <div class="col-1">
+                <label for="v_CR_CODE">Tentative Land</label>
+                <input class="form-control" type="text" id="v_TENTATIVE_LAND" formControlName="v_TENTATIVE_LAND" readonly>
+
+            </div>
+
+            <div class="col-1">
+                <label for="v_CR_CODE">Final Land</label>
+                <input class="form-control" type="text" id="v_FINAL_LAND" formControlName="v_FINAL_LAND" readonly>
+            </div>
+
+            <div class="col-2">
+                <label for="n_TENTATIVE_LAND_COST">Tentative Land Cost</label>
+                <input class="form-control" type="text" id="n_TENTATIVE_LAND_COST" formControlName="n_TENTATIVE_LAND_COST"
+                readonly>
+            </div>
+
+            <div class="col-2">
+                <label for="n_FINAL_LAND_COST">Final Land Cost</label>
+                <input class="form-control" type="text" id="n_FINAL_LAND_COST" formControlName="n_FINAL_LAND_COST" readonly>
+            </div>
+
+            <div class="col-2">
+                <label for="v_FINAL_CUTOFF_DATE">FLC Cut-off Date</label>
+                <input class="form-control" type="date" id="v_FINAL_CUTOFF_DATE" formControlName="v_FINAL_CUTOFF_DATE" readonly>
+            </div>
+
+            <div class="col-1">
+                <label for="n_PROFIT_ON_LAND">Profit</label>
+                <input class="form-control" type="text" id="n_PROFIT_ON_LAND" formControlName="n_PROFIT_ON_LAND" readonly>
+            </div>
+
+            <div class="col-1">
+                <label for="v_START_FROM">Start From</label>
+                <input class="form-control" type="text" id="v_START_FROM" formControlName="v_START_FROM" readonly>
+            </div>
+
+            <div class="col-5">
+                <label for="v_REMARKS">Remarks</label>
+                <input class="form-control" type="text" id="v_REMARKS" formControlName="v_REMARKS" readonly>
+            </div>
+
+        </form>
+    </div>
+
+    <div style="background-color: #FFC9FE;border-radius: 10px; padding: 1rem;margin-bottom: 1rem;">
+        <span style="font-weight: bold;font-size: medium;">Type Updated Value</span>
+        <form [formGroup]="unitDataForm" class="row g-2 mt-2">
+
+            <div class="col-1">
+                <label for="n_TOTAL_ALLOTTED_UNITS">Allotted Units</label>
+                <input class="form-control" type="text" id="n_TOTAL_ALLOTTED_UNITS" formControlName="n_TOTAL_ALLOTTED_UNITS"
+                    readonly>
+            </div>
+
+            <div class="col-1">
+                <label for="n_TOTAL_UNSOLD_UNITS">Unsold Units</label>
+                <input class="form-control" type="text" id="n_TOTAL_UNSOLD_UNITS" formControlName="n_TOTAL_UNSOLD_UNITS" readonly>
+            </div>
+
+            <div class="col-1">
+                <label for="n_TOTAL_ALLOTTED_UNITS_FOR_OUTRIGHT">OR Alotted</label>
+                <input class="form-control" type="text" id="n_TOTAL_ALLOTTED_UNITS_FOR_OUTRIGHT"
+                    formControlName="n_TOTAL_ALLOTTED_UNITS_FOR_OUTRIGHT" readonly>
+            </div>
+
+            <div class="col-1">
+                <label for="n_TOTAL_ALLOTTED_UNITS_FOR_HIRE_PURCHASE">HP Allotted</label>
+                <input class="form-control" type="text" id="n_TOTAL_ALLOTTED_UNITS_FOR_HIRE_PURCHASE"
+                    formControlName="n_TOTAL_ALLOTTED_UNITS_FOR_HIRE_PURCHASE" readonly>
+            </div>
+
+            <div class="col-1">
+                <label for="n_TOTAL_ALLOTTED_UNITS_FOR_SFS">SFS Allotted</label>
+                <input class="form-control" type="text" id="n_TOTAL_ALLOTTED_UNITS_FOR_SFS"
+                    formControlName="n_TOTAL_ALLOTTED_UNITS_FOR_SFS" readonly>
+            </div>
+
+            <div class="col-2">
+                <label for="n_TOTAL_ARREARS_EMI">Arrear EMI</label>
+                <input class="form-control" type="text" id="n_TOTAL_ARREARS_EMI" formControlName="n_TOTAL_ARREARS_EMI" readonly>
+            </div>
+
+            <div class="col-2">
+                <label for="n_TOTAL_CURRENT_EMI">Current EMI</label>
+                <input class="form-control" type="text" id="n_TOTAL_CURRENT_EMI" formControlName="n_TOTAL_CURRENT_EMI" readonly>
+            </div>
+
+            <div class="col-2">
+                <label for="n_TOTAL_BALANCE_EMI">Balance EMI</label>
+                <input class="form-control" type="text" id="n_TOTAL_BALANCE_EMI" formControlName="n_TOTAL_BALANCE_EMI" readonly>
+            </div>
+
+            <div class="col-1">
+                <label for="n_TOTAL_LIVE_CASES_FOR_HIRE">Live Units</label>
+                <input class="form-control" type="text" id="n_TOTAL_LIVE_CASES_FOR_HIRE"
+                    formControlName="n_TOTAL_LIVE_CASES_FOR_HIRE" readonly>
+            </div>
+
+            <div class="col-2">
+                <label for="n_FULL_COST_PAID">Full cost paid</label>
+                <input class="form-control" type="text" id="n_FULL_COST_PAID"
+                    formControlName="n_FULL_COST_PAID" readonly>
+            </div>
+
+            <div class="col-2">
+                <label for="n_TOTAL_NO_OF_SALE_DEED_ISSUED">Sale Deed Issued</label>
+                <input class="form-control" type="text" id="n_TOTAL_NO_OF_SALE_DEED_ISSUED" formControlName="n_TOTAL_NO_OF_SALE_DEED_ISSUED" readonly>
+            </div>
+
+            <div class="col-2">
+                <label for="n_TOTAL_RIPPED_UNIT">Ripe Units</label>
+                <input class="form-control" type="text" id="n_TOTAL_RIPPED_UNIT" formControlName="n_TOTAL_RIPPED_UNIT" readonly>
+            </div>
+        </form>
+    </div>
+</section>

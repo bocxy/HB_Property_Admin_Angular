@@ -1,0 +1,309 @@
+<section section *ngIf="modeService.createWebsite" class="main-content">
+  <h2 class="heading">Create Website</h2>
+  <div class="button-container">
+    <button type="submit" class="btn create" style="background-color: #470A3C;color: white;" routerLink="/property/home/website"
+    (click)="showViewWebsite(n_ID)">View</button>
+
+</div>
+<br>
+<form [formGroup]="websiteFormGroup" class="website-data-form">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Upload Website Scheme Photos</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <input type="file" accept="image/*" (change)="onFileSelected('fphoto', $event)" multiple formControlName="fphoto" required/>
+      <div *ngIf="selectedFiles['fphoto'].length > 0">
+        <h4>Selected File Names:</h4>
+        <ul>
+          <li *ngFor="let file of selectedFiles['fphoto']">{{ file.name }}</li>
+        </ul>
+      </div>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card>
+    <mat-card-content>
+      <mat-card-title>Upload Video</mat-card-title>
+      <input  type="file" accept="video/*" (change)="onFileSelected('fvideo',$event)" formControlName="fvideo" required>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Floor Plan Picture:</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <input type="file" accept="image/*" (change)="onFileSelected('ffloorPlanPicture',$event)" formControlName="ffloorPlanPicture" required>
+     </mat-card-content>
+  </mat-card>
+
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Point of Contact Picture</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <input type="file"  accept="image/*" (change)="onFileSelected('fpocPicture',$event)"   formControlName="fpocPicture" required>
+    </mat-card-content>
+  </mat-card>
+
+    <mat-form-field>
+    <mat-label>Project Description:</mat-label>
+    <textarea matInput placeholder="Ex.Near to Koyambedu...."  formControlName="vprojectDescription" required></textarea>
+    </mat-form-field>
+
+    <mat-form-field class="example-chip-list">
+      <mat-label>Amenities</mat-label>
+      <mat-chip-grid #chipGrid aria-label="Enter amenities">
+        <mat-chip-row *ngFor="let fruit of fruits; let i = index" [removable]="removable" (removed)="remove(fruit)">
+          {{ fruit }}
+          <button matChipRemove [attr.aria-label]="'remove ' + fruit">
+            <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+          </button>
+        </mat-chip-row>
+      </mat-chip-grid>
+      <input placeholder="New amenities..."
+             [matChipInputFor]="chipGrid"
+             [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+             [matChipInputAddOnBlur]="addOnBlur"
+             (matChipInputTokenEnd)="add($event)" formControlName="vamenities" required/>
+    </mat-form-field>
+  <mat-form-field>
+      <mat-label>Geo tag link:</mat-label>
+      <input matInput type="text" formControlName="vgeoTagLink" required>
+  </mat-form-field>
+
+  <mat-form-field>
+      <mat-label>Point of Contact Name:</mat-label>
+      <input matInput type="text" formControlName="vpocName" required>
+  </mat-form-field>
+
+  <mat-form-field>
+      <mat-label>Point of Contact Mobile:</mat-label>
+      <input matInput type="text" formControlName="vpocMobile" required>
+  </mat-form-field>
+
+  <mat-form-field>
+      <mat-label>Point of Contact Email:</mat-label>
+      <input matInput type="text" formControlName="vpocEmail" required>
+  </mat-form-field>
+
+  <div class="button">
+      <button type="Submit" class="btn create"
+          style="background-color: #470A3C;color: white;" (click)="onSubmit()">Create</button>
+  </div>
+</form>
+</section>
+
+<section *ngIf="modeService.editWebsite" class="main-content">
+  <h2 class="heading">Edit Website</h2>
+  <br>
+  <form [formGroup]="websiteFormGroup" class="website-data-form">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Edit Website Scheme Photos</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <input type="file" accept="image/*" (change)="onFileSelected('fphoto', $event)" formControlName="fphoto" required/>
+        <a *ngIf="websiteData.fphoto" [href]="getFileName(websiteData.fphoto)" target="_blank" rel="noopener noreferrer">
+          View
+        </a>
+             </mat-card-content>
+    </mat-card>
+
+    <mat-card>
+      <mat-card-content>
+        <mat-card-title>Edit Video</mat-card-title>
+        <input type="file" accept="video/*" (change)="onFileSelected('fvideo', $event)" formControlName="fvideo" required>
+        <a *ngIf="websiteData.fvideo" [href]="getFileName(websiteData.fvideo)" target="_blank" rel="noopener noreferrer">
+          View
+        </a>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Edit Floor Plan Picture</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <input type="file" accept="image/*" (change)="onFileSelected('ffloorPlanPicture', $event)" formControlName="ffloorPlanPicture" required>
+        <a *ngIf="websiteData.ffloorPlanPicture" [href]="getFileName(websiteData.ffloorPlanPicture)" target="_blank" rel="noopener noreferrer">
+          View
+        </a>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Edit Point of Contact Picture</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <input type="file" accept="image/*" (change)="onFileSelected('fpocPicture', $event)" formControlName="fpocPicture" required>
+        <a *ngIf="websiteData.fpocPicture" [href]="getFileName(websiteData.fpocPicture)" target="_blank" rel="noopener noreferrer">
+          View
+        </a>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-form-field>
+      <mat-label>Project Description:</mat-label>
+      <textarea matInput placeholder="Ex. Near to Koyambedu...." formControlName="vprojectDescription" [(ngModel)]="websiteData.vprojectDescription">
+
+      </textarea>
+    </mat-form-field>
+
+    <mat-form-field class="example-chip-list">
+      <mat-label>Amenities</mat-label>
+      <mat-chip-grid #chipGrid aria-label="Enter amenities">
+        <mat-chip-row *ngFor="let amenity of websiteData.vamenities?.split(','); let i = index" [removable]="removable" (removed)="remove(amenity)">
+          {{ amenity }}
+          <button matChipRemove [attr.aria-label]="'remove ' + amenity">
+            <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+          </button>
+        </mat-chip-row>
+      </mat-chip-grid>
+      <input placeholder="New amenities..."
+             [matChipInputFor]="chipGrid"
+             [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+             [matChipInputAddOnBlur]="addOnBlur"
+             (matChipInputTokenEnd)="add($event)" formControlName="vamenities" required />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Geo tag link:</mat-label>
+      <input matInput type="text" formControlName="vgeoTagLink" required
+      [(ngModel)]="websiteData.vgeoTagLink">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Point of Contact Name:</mat-label>
+      <input matInput type="text" formControlName="vpocName" required [(ngModel)]="websiteData.vpocName">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Point of Contact Mobile:</mat-label>
+      <input matInput type="text" formControlName="vpocMobile" required [(ngModel)]="websiteData.vpocMobile">
+    </mat-form-field>
+
+
+    <mat-form-field>
+      <mat-label>Point of Contact Email:</mat-label>
+      <input matInput type="text" formControlName="vpocEmail" required [(ngModel)]="websiteData.vpocEmail">
+    </mat-form-field>
+
+
+    <div class="button">
+      <button type="submit" class="btn create" style="background-color: #470A3C; color: white;" (click)="onUpdate(websiteData.n_ID)">Save Changes</button>
+    </div>
+  </form>
+</section>
+
+
+<section *ngIf="modeService.viewWebsite" class="main-content">
+  <h1 class="title-inventory">View Website</h1>
+  <div class="button-container">
+    <button type="submit" class="btn create" style="background-color: #470A3C; color: white;" routerLink="/property/home/website" (click)="showEditWebsite(websiteData.n_ID)">Edit</button>
+
+    <button type="button" class="btn btn-danger" (click)="deleteWebsite()" >Delete</button>
+  </div>
+  <br>
+ <form [formGroup]="websiteFormGroup" class="website-data-form">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>View Website Scheme Photos</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <a *ngIf="websiteData.fphoto" [href]="getFileName(websiteData.fphoto)" target="_blank" rel="noopener noreferrer">
+        View
+      </a>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card>
+    <mat-card-content>
+      <mat-card-title>View Video</mat-card-title>
+      <a *ngIf="websiteData.fvideo" [href]="getFileName(websiteData.fvideo)" target="_blank" rel="noopener noreferrer">
+        View
+      </a>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Floor Plan Picture</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <a *ngIf="websiteData.ffloorPlanPicture" [href]="getFileName(websiteData.ffloorPlanPicture)" target="_blank" rel="noopener noreferrer">
+        View
+      </a>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Point of Contact Picture</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <a *ngIf="websiteData.fpocPicture" [href]="getFileName(websiteData.fpocPicture)" target="_blank" rel="noopener noreferrer">
+        View
+      </a>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-form-field>
+    <mat-label>Project Description:</mat-label>
+    <textarea matInput [value]="websiteData?.vprojectDescription" readonly></textarea>
+  </mat-form-field>
+
+  <mat-form-field class="example-chip-list">
+    <mat-label>Amenities</mat-label>
+    <mat-chip-grid #chipGrid aria-label="Amenities">
+      <mat-chip-row *ngFor="let amenity of websiteFormGroup.get('vamenities')!.value?.split(',') let i = index"
+                    [removable]="removable" (removed)="remove(amenity)">
+        {{ amenity }}
+        <button matChipRemove [attr.aria-label]="'remove ' + amenity">
+          <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+        </button>
+      </mat-chip-row>
+    </mat-chip-grid>
+    <input placeholder="New amenities..."
+           [matChipInputFor]="chipGrid"
+           [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+           [matChipInputAddOnBlur]="addOnBlur"
+           (matChipInputTokenEnd)="add($event)" [value]="websiteData?.vamenities" readonly />
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Geo tag link:</mat-label>
+    <input matInput [value]="websiteData?.vgeoTagLink" readonly>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Point of Contact Name:</mat-label>
+    <input matInput [value]="websiteData?.vpocName" readonly>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Point of Contact Mobile:</mat-label>
+    <input matInput [value]="websiteData?.vpocMobile" readonly>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Point of Contact Email:</mat-label>
+    <input matInput [value]="websiteData?.vpocEmail" readonly>
+  </mat-form-field>
+
+  <div class="button">
+    <button type="submit" class="btn create" style="background-color: #470A3C; color: white;" routerLink="/property/home/scheme">Back</button>
+  </div>
+</form>
+
+
+
+</section>
+
+
+
+
+
+

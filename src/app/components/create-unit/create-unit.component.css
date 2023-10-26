@@ -1,0 +1,37 @@
+.main-content {
+    padding: 2rem;
+}
+
+.heading {
+    color: #470A3C;
+    font-weight: bold;
+}
+
+.label-ellipsis {
+    width: 100px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.row-1 {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto;
+    column-gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.tab-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    column-gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.tab-button {
+    width: 10rem;
+}
+
+.tab-button.active {
+    background-color: #470A3C;
+    color: white;
+}

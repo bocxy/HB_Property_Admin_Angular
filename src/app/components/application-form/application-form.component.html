@@ -1,0 +1,344 @@
+<div class="container-fluid d-flex flex-column p-0" style="min-height: 100vh;">
+
+    <main id="main">
+
+        <section class="main-content">
+            <h2 style="font-weight: bold;text-align: center;">E - APPLICATION FORM - FIRST COME FIRST SERVE</h2>
+
+            <mat-stepper #stepper>
+                <mat-step label="Application Form">
+
+                    <form class="row g-3 mt-2" [formGroup]="unitDetailsForm">
+                        <div class="col-3 mb-3">
+                            <label for="" class="form-label">Unit Account No</label>
+                            <input type="text" class="form-control" id="" placeholder=""
+                                formControlName="unitAccountNo">
+                        </div>
+
+                        <div class="col-1 mb-3">
+                            <label for="" class="form-label">Unit Type</label>
+                            <input type="text" class="form-control" id="" placeholder="" formControlName="unitType">
+                        </div>
+
+                        <div class="col-2 mb-3">
+                            <label for="" class="form-label">Mode of Allotment</label>
+                            <input type="text" class="form-control" id="" placeholder=""
+                                formControlName="modeOfAllotment">
+                        </div>
+
+                        <div class="col-2 mb-3">
+                            <label for="" class="form-label">CITY / RURAL</label>
+                            <input type="text" class="form-control" id="" placeholder="" formControlName="cityRural">
+                        </div>
+
+                        <div class="col-4 mb-3">
+                            <label for="" class="form-label">CIRCLE</label>
+                            <input type="text" class="form-control" id="" placeholder="" formControlName="circle">
+                        </div>
+
+                        <div class="col-4 mb-3">
+                            <label for="" class="form-label">SCHEME</label>
+                            <input type="text" class="form-control" id="" placeholder="" formControlName="scheme">
+                        </div>
+
+                        <div class="col-2 mb-3">
+                            <label for="" class="form-label">Type</label>
+                            <input type="text" class="form-control" id="" placeholder="" formControlName="type">
+                        </div>
+
+                        <div class="col-2 mb-3">
+                            <label for="" class="form-label">Block No</label>
+                            <input type="text" class="form-control" id="" placeholder="" formControlName="blockNo">
+                        </div>
+
+                        <div class="col-2 mb-3">
+                            <label for="" class="form-label">Floor No</label>
+                            <input type="text" class="form-control" id="" placeholder="" formControlName="floorNo">
+                        </div>
+
+                        <div class="col-2 mb-3">
+                            <label for="" class="form-label">Flat No</label>
+                            <input type="text" class="form-control" id="" placeholder="" formControlName="flatNo">
+                        </div>
+
+                        <div class="col-2 mb-3">
+                            <label for="" class="form-label">Unit No</label>
+                            <input type="text" class="form-control" id="" placeholder="" formControlName="unitNo">
+                        </div>
+
+                        <div class="col-2 mb-3">
+                            <label for="" class="form-label">Plot / UDS Area</label>
+                            <input type="text" class="form-control" id="" placeholder="" formControlName="plotUdsArea">
+                        </div>
+
+                        <div class="col-2 mb-3">
+                            <label for="" class="form-label">Plinth Area</label>
+                            <input type="text" class="form-control" id="" placeholder="" formControlName="plinthArea">
+                        </div>
+
+                        <div class="col-3 mb-3">
+                            <label for="" class="form-label">Reservation Category</label>
+                            <input type="text" class="form-control" id="" placeholder=""
+                                formControlName="reservationCategory">
+                        </div>
+
+                        <div class="col-3 mb-3">
+                            <label for="" class="form-label">Priority Basis</label>
+                            <input type="text" class="form-control" id="" placeholder=""
+                                formControlName="priorityBasis">
+                        </div>
+
+                        <div class="col-3">
+                            <label for="" class="form-label">Cost of the Unit</label>
+                            <input type="text" class="form-control" id="" placeholder="" formControlName="costOfUnit">
+                        </div>
+                    </form>
+
+                    <h2 style="font-weight: bold;margin-top: 2rem;margin-bottom: -1rem;">Applicant Details</h2>
+                    <form class="row g-3 mt-2" [formGroup]="applicantForm">
+
+                        <div class="col-12 mb-3">
+                            <label for="applicantPhoto" class="form-label">Applicant Photo</label>
+                            <input type="file" class="form-control" style="width: 24%;" id="applicantPhoto">
+
+                        </div>
+
+                        <div class="col-6 mb-3">
+                            <label for="" class="form-label">Applicant Name</label>
+                            <input type="text" class="form-control" id="" placeholder=""
+                                formControlName="applicantName">
+                        </div>
+
+                        <div class="col-3 mb-3">
+                            <label for="" class="form-label">Date of Birth</label>
+                            <input type="date" class="form-control" id="" placeholder="" formControlName="dateOfBirth">
+                        </div>
+
+                        <div class="col-3 mb-3">
+                            <label for="" class="form-label">Age</label>
+                            <input type="text" class="form-control" id="" placeholder="" formControlName="age" readonly>
+                        </div>
+
+                        <div class="col-6 mb-3">
+                            <label for="" class="form-label">Applicant Husband / Wife Name</label>
+                            <input type="text" class="form-control" id="" placeholder=""
+                                formControlName="applicantSpouseName">
+                        </div>
+
+                        <div class="col-6 mb-3">
+                            <label for="" class="form-label">Applicant Father Name</label>
+                            <input type="text" class="form-control" id="" placeholder="" formControlName="applicantFathersName">
+                        </div>
+
+                        <div class="col-6 mb-3">
+                            <label for="" class="form-label">Joint Applicant Name (Spouse)</label>
+                            <input type="text" class="form-control" id="" placeholder=""
+                                formControlName="jointApplicantName">
+                        </div>
+
+                        <div class="col-3 mb-3">
+                            <label for="" class="form-label">Date of Birth</label>
+                            <input type="date" class="form-control" id="" placeholder=""
+                                formControlName="jointApplicantDOB">
+                        </div>
+
+                        <div class="col-3 mb-3">
+                            <label for="" class="form-label">Age</label>
+                            <input type="text" class="form-control" id="" placeholder=""
+                                formControlName="jointApplicantAge" readonly>
+                        </div>
+
+                        <div class="col-6 mb-3">
+                            <label for="" class="form-label">Joint Applicant Father Name</label>
+                            <input type="text" class="form-control" id="" placeholder=""
+                                formControlName="jointApplicantFathername">
+                        </div>
+
+                        <div class="col-6 mb-3">
+                            <label for="" class="form-label">Joint Applicant Husband/Wife Name</label>
+                            <input type="text" class="form-control" id="" placeholder=""
+                                formControlName="jointApplicantSpouseName">
+                        </div>
+
+                        <div class="col-6 mb-3">
+                            <label for="" class="form-label">Mobile Number</label>
+                            <input type="text" class="form-control" id="" placeholder="" formControlName="mobileNumber"
+                                readonly>
+                        </div>
+
+                        <div class="col-6 mb-3">
+                            <label for="" class="form-label">Email Id</label>
+                            <input type="email" class="form-control" id="" placeholder="" formControlName="emailId"
+                                readonly>
+                        </div>
+
+                        <div class="col-6 mb-3">
+                            <label for="" class="form-label">Applicant Aadhaar Number</label>
+                            <input type="text" class="form-control" id="" placeholder=""
+                                formControlName="aadhaarNumber">
+                        </div>
+
+                        <div class="col-6 mb-3">
+                            <label for="" class="form-label">Applicant PAN Number</label>
+                            <input type="text" class="form-control" id="" placeholder="" formControlName="panNumber">
+                        </div>
+
+                        <div class="col-3 mb-3">
+                            <label for="" class="form-label">Correspondence Address</label>
+                            <input type="text" class="form-control" id="" placeholder=""
+                                formControlName="correspondenceAddress">
+                        </div>
+
+                        <div class="col-3 mb-3">
+                            <label for="" class="form-label">Permanent Address</label>
+                            <input type="text" class="form-control" id="" placeholder=""
+                                formControlName="permanentAddress">
+                        </div>
+
+                        <div class="col-3 mb-3">
+                            <label for="" class="form-label">Applicant Monthly Income</label>
+                            <input type="text" class="form-control" id="" placeholder=""
+                                formControlName="applicantMonthlyIncome">
+                        </div>
+
+                        <div class="col-3 mb-3">
+                            <label for="" class="form-label">Spouse Monthly Income</label>
+                            <input type="text" class="form-control" id="" placeholder=""
+                                formControlName="spouseMonthlyIncome">
+                        </div>
+
+                        <div class="col-3 mb-3">
+                            <label for="" class="form-label">Total Monthly Income</label>
+                            <input type="text" class="form-control" id="" placeholder=""
+                                formControlName="totalMonthlyIncome">
+                        </div>
+
+                    </form>
+
+                    <h2 style="font-weight: bold;margin-top: 2rem;margin-bottom: -1rem;">Bank Details</h2>
+                    <form class="row g-3 mb-3 mt-2" [formGroup]="bankDetailsForm">
+
+                        <div class="col-3 mb-3">
+                            <label for="" class="form-label">Name of the Bank</label>
+                            <input type="text" class="form-control" id="" placeholder="" formControlName="bankName">
+                        </div>
+
+                        <div class="col-3 mb-3">
+                            <label for="" class="form-label">Account Number</label>
+                            <input type="text" class="form-control" id="" placeholder=""
+                                formControlName="accountNumber">
+                        </div>
+
+                        <div class="col-3 mb-3">
+                            <label for="" class="form-label">IFSC Code</label>
+                            <input type="text" class="form-control" id="" placeholder="" formControlName="ifscCode">
+                        </div>
+
+                        <div class="col-3 mb-3">
+                            <label for="" class="form-label">Account Holder Name</label>
+                            <input type="text" class="form-control" id="" placeholder=""
+                                formControlName="accountHolderName">
+                        </div>
+                    </form>
+
+
+
+                    <div>
+                        <button mat-button matStepperNext style="background-color: #470A3C;
+                        color: #ffffff;">Next</button>
+                    </div>
+
+                </mat-step>
+                <mat-step label="Documents">
+                    <form [formGroup]="documentForm">
+                        <section class="mt-2">
+                          <h2 style="font-weight: bold; text-align: center;">Allotment under reservation basis</h2>
+                          <div class="row g-3">
+                            <ng-container *ngFor="let document of
+                            [
+                              { name: 'Native Certificate', path: documentForm.value.nativecertificate },
+                              { name: 'Birth Certificate', path: documentForm.value.birthcertificate },
+                              { name: 'Aadhar Proof', path: documentForm.value.aadhar },
+                              { name: 'PAN Proof', path: documentForm.value.pan },
+                              { name: 'Income Certificate', path: documentForm.value.incomecertificate },
+                              { name: 'Main Category Certificate', path: documentForm.value.maincategorycertificate },
+                              { name: 'Subcategory Certificate', path: documentForm.value.subcategorycertificate },
+                              { name: 'Signature', path: documentForm.value.signature },
+                              { name: 'Join Applicant Signature', path: documentForm.value.joinapplsignature }
+                            ]">
+                              <div class="col-6 mb-3">
+                                <div class="document-item">
+                                  <p>{{ document.name }}</p>
+                                  <button mat-button matStepperPrevious style="background-color: #f0bbe7; color: #ffffff;">
+                                    <a [href]="openFileInNewTab(document.path)" target="_blank">View</a>
+                                  </button>
+                                </div>
+                              </div>
+                            </ng-container>
+                          </div>
+                        </section>
+
+                        <div>
+                          <button mat-button matStepperPrevious style="background-color: #470A3C; color: #ffffff; margin-left: 1rem;">Back</button>
+                          <button mat-button matStepperNext style="background-color: #470A3C; color: #ffffff; margin-left: 1rem;">Next</button>
+                        </div>
+                      </form>
+
+                </mat-step>
+                <mat-step label="Payment">
+                    <form class="row g-3 mt-2" [formGroup]="paymentForm">
+                    <section class="mt-2" style="display: flex;justify-content: center;align-items: center;">
+                        <div class="w-50">
+                            <div class="row mb-3">
+                                <label for="" class="col-6 col-form-label">Application Fee (Inclusive of
+                                    Taxes)</label>
+                                <div class="col-6">
+                                    <input type="text" class="form-control" id="" formControlName="applicationFee">
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="" class="col-6 col-form-label">Registration Fee (Inclusive of
+                                    Taxes)</label>
+                                <div class="col-6">
+                                    <input type="text" class="form-control" id=""  formControlName="registrationFee">
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="" class="col-6 col-form-label">10% of Total Cost</label>
+                                <div class="col-6">
+                                    <input type="text" class="form-control" id="" formControlName="amountPaid">
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <div>
+                        <button mat-button matStepperPrevious style="background-color: #470A3C;
+                        color: #ffffff;margin-left: 1rem;">Back</button>
+                        <button mat-button style="background-color: #470A3C;
+                        color: #ffffff;margin-left: 1rem;" (click)="togglePopup()">Proceed</button>
+                    </div>
+
+                </form>
+                </mat-step>
+            </mat-stepper>
+            <div *ngIf="showPopup" class="popup-container">
+                <div class="popup">
+                  <button mat-icon-button class="close-icon" (click)="closePopup()">
+                    <mat-icon>close</mat-icon>
+                  </button>
+                  <h2>Do you want to Accept/Reject the Application?</h2>
+
+                  <button mat-button style="background-color: #470A3C;
+                  color: #ffffff;margin-left: 1rem;"(click)="accept()">Accept</button>
+                  <button mat-button style="background-color: #470A3C;
+                  color: #ffffff;margin-left: 1rem;"(click)="reject()">Reject</button>
+                </div>
+              </div>
+
+        </section>
+
+    </main>
+
+
+</div>
