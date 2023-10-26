@@ -181,6 +181,7 @@ export class HttpService {
     return this.http.post<any>(url, request);
   }
 
+
   deleteWebsiteData(id: number) {
     const url = `${this.apiUrl}deleteWebsite`;
     const requestBody = { id };
