@@ -1,109 +1,91 @@
 <section class="main-content">
-    <div class="header-row">
-        <h3 class="sub-heading">Master Data</h3>
-    </div>
-    <div class="filter-row mb-4">
-      <div>
-          <label for="search-input" class="label">Filter</label><br>
-          <div class="search-container">
-              <div>
-                  <input matInput #input (keyup)="applyFilter($event)" type="text" id="search-input"
-                      class="search-input" placeholder="Search...">
-                  <div class="search-icon">
-                      <mat-icon>search</mat-icon>
-                  </div>
-              </div>
-          </div>
-      </div>
-      <div>
-          <button class="btn btn-light add-dataBtn" (click)="showCreateUnit()">
-              <span><svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-plus"
-                      viewBox="0 0 16 16">
-                      <path
-                          d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
-                  </svg></span>New Unit Data</button>
-      </div>
+  <div class="header-row">
+    <h3 class="sub-heading">Master Data</h3>
   </div>
+  <div class="filter-row mb-4">
     <div>
-      <mat-tab-group>
-      <mat-tab label="Unit Data">
-      <table mat-table [dataSource]="allUnitDataSource" matSort class="schemes-table">
+      <label for="search-input" class="label">Filter</label><br>
+      <div class="search-container">
+        <div>
+          <input matInput #input (keyup)="applyFilter($event)" type="text" id="search-input" class="search-input"
+            placeholder="Search...">
+          <div class="search-icon">
+            <mat-icon>search</mat-icon>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <button class="btn btn-light add-dataBtn" (click)="showCreateUnit()">
+        <span><svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+            <path
+              d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
+          </svg></span>New Unit Data</button>
+    </div>
+  </div>
+  <div>
+    <table mat-table [dataSource]="allUnitDataSource" matSort class="schemes-table">
 
-        <!-- Position Column -->
-        <ng-container matColumnDef="n_ID">
-          <th mat-header-cell *matHeaderCellDef> S.No. </th>
-          <td mat-cell *matCellDef="let element"> {{element.serialNumber}} </td>
-        </ng-container>
+      <!-- Position Column -->
+      <ng-container matColumnDef="n_ID">
+        <th mat-header-cell *matHeaderCellDef> S.No. </th>
+        <td mat-cell *matCellDef="let element"> {{element.serialNumber}} </td>
+      </ng-container>
 
-         <!-- Weight Column -->
-         <ng-container matColumnDef="v_UNIT_NO">
-          <th mat-header-cell *matHeaderCellDef> Unit No</th>
-          <td mat-cell *matCellDef="let element"> {{element.v_UNIT_NO}} </td>
-        </ng-container>
+      <!-- Weight Column -->
+      <ng-container matColumnDef="v_UNIT_NO">
+        <th mat-header-cell *matHeaderCellDef> Unit No</th>
+        <td mat-cell *matCellDef="let element"> {{element.v_UNIT_NO}} </td>
+      </ng-container>
 
-        <!-- Name Column -->
-        <ng-container matColumnDef="v_UNIT_AC_NO">
-          <th mat-header-cell *matHeaderCellDef> Unit Account No </th>
-          <td mat-cell *matCellDef="let element"> {{element.v_UNIT_AC_NO}} </td>
-        </ng-container>
+      <!-- Name Column -->
+      <ng-container matColumnDef="v_UNIT_AC_NO">
+        <th mat-header-cell *matHeaderCellDef> Unit Account No </th>
+        <td mat-cell *matCellDef="let element"> {{element.v_UNIT_AC_NO}} </td>
+      </ng-container>
 
-        <!-- Symbol Column -->
-        <ng-container matColumnDef="v_BLOCK_NO">
-          <th mat-header-cell *matHeaderCellDef> Block</th>
-          <td mat-cell *matCellDef="let element"> {{element.v_BLOCK_NO}} </td>
-        </ng-container>
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="v_BLOCK_NO">
+        <th mat-header-cell *matHeaderCellDef> Block</th>
+        <td mat-cell *matCellDef="let element"> {{element.v_BLOCK_NO}} </td>
+      </ng-container>
 
-         <!-- Symbol Column -->
-         <ng-container matColumnDef="v_FLOOR_NO">
-          <th mat-header-cell *matHeaderCellDef> Floor</th>
-          <td mat-cell *matCellDef="let element"> {{element.v_FLOOR_NO}} </td>
-        </ng-container>
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="v_FLOOR_NO">
+        <th mat-header-cell *matHeaderCellDef> Floor</th>
+        <td mat-cell *matCellDef="let element"> {{element.v_FLOOR_NO}} </td>
+      </ng-container>
 
-         <!-- Symbol Column -->
-         <ng-container matColumnDef="v_UNIT_ALLOTTED_STATUS">
-          <th mat-header-cell *matHeaderCellDef>Allotted Status</th>
-          <td mat-cell *matCellDef="let element"> {{element.v_UNIT_ALLOTTED_STATUS}} </td>
-        </ng-container>
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="v_UNIT_ALLOTTED_STATUS">
+        <th mat-header-cell *matHeaderCellDef>Allotted Status</th>
+        <td mat-cell *matCellDef="let element"> {{element.v_UNIT_ALLOTTED_STATUS}} </td>
+      </ng-container>
 
-         <!-- Symbol Column -->
-         <ng-container matColumnDef="ACTION">
-          <th mat-header-cell *matHeaderCellDef> Action</th>
-          <td mat-cell *matCellDef="let element" class="p-0">
-            <div class="d-flex justify-content-evenly">
-                <a (click)="showViewUnit(element.n_ID)" style="color: #470A3C;cursor: pointer;"><span class="material-symbols-rounded">visibility</span></a>
-                <a (click)="showEditUnit(element.n_ID)" style="color: #470A3C;cursor: pointer;"><span class="material-symbols-rounded">edit</span></a>
-            </div>
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="ACTION">
+        <th mat-header-cell *matHeaderCellDef> Action</th>
+        <td mat-cell *matCellDef="let element" class="p-0">
+          <div class="d-flex justify-content-evenly">
+            <a (click)="showViewUnit(element.n_ID)" style="color: #470A3C;cursor: pointer;"><span
+                class="material-symbols-rounded">visibility</span></a>
+            <a (click)="showEditUnit(element.n_ID)" style="color: #470A3C;cursor: pointer;"><span
+                class="material-symbols-rounded">edit</span></a>
+          </div>
         </td>
-        </ng-container>
+      </ng-container>
 
-        <tr mat-header-row *matHeaderRowDef="unitTableColumns"></tr>
-        <tr mat-row *matRowDef="let row; columns: unitTableColumns;"></tr>
+      <tr mat-header-row *matHeaderRowDef="unitTableColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: unitTableColumns;"></tr>
 
-         <!-- Row shown when there is no matching data. -->
-         <tr class="mat-row" *matNoDataRow>
-          <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+      <!-- Row shown when there is no matching data. -->
+      <tr class="mat-row" *matNoDataRow>
+        <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
       </tr>
 
 
     </table>
     <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
-      </mat-tab>
-
-      <mat-tab label="Allotee" >
-
-      </mat-tab>
-
-      <mat-tab label="Financial">
-
-      </mat-tab>
-
-      <mat-tab label="Sale Deed">
-
-      </mat-tab>
-
-    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
-
-  </mat-tab-group>
   </div>
 
 </section>

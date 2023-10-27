@@ -21,6 +21,8 @@ export class CreateUnitComponent {
   sfsFormGroup!: FormGroup;
   UnitDataFormGroup!: FormGroup;
   sfsDataFormGroup!: FormGroup;
+  PropertyDataFormGroup!: FormGroup;
+  AllotteeDataFormGroup!: FormGroup;
   schemeId: any
   id!: number;
   private subscription!: Subscription;
@@ -219,27 +221,27 @@ export class CreateUnitComponent {
         this.UnitFormGroup.get('Mode_of_Allotment')!.setValue(data.v_MODE_OF_ALLOCATION);
         const modeOfAllotmentother = data.v_MODE_OF_ALLOCATION;
         if (modeOfAllotmentother === 'HP') {
-        this.enableFormControls();
-      } else {
+          this.enableFormControls();
+        } else {
 
-        this.disableFormControls();
-      }
-      this.UnitFormGroup.get('Mode_of_Allotment')!.setValue(data.v_MODE_OF_ALLOCATION);
+          this.disableFormControls();
+        }
+        this.UnitFormGroup.get('Mode_of_Allotment')!.setValue(data.v_MODE_OF_ALLOCATION);
         const modeOfAllotmentsfs = data.v_MODE_OF_ALLOCATION;
         if (modeOfAllotmentsfs === 'SFS') {
           this.disableFormControlsID_due_date();
 
-      } else {
-        this.enableFormControlsID_due_date();
+        } else {
+          this.enableFormControlsID_due_date();
 
-      }
+        }
 
-      this.UnitFormGroup.get('unit_type')!.setValue(data.v_UNIT_TYPE);
+        this.UnitFormGroup.get('unit_type')!.setValue(data.v_UNIT_TYPE);
         const typenameother = data.v_UNIT_TYPE;
         if (typenameother === 'Flat') {
           this.disableFormControlsRoadfacing();
         } else {
-        this.enableFormControlsRoadfacing();
+          this.enableFormControlsRoadfacing();
         }
         this.sfsFormGroup.patchValue({
           division: data.v_DIVISION,
@@ -258,27 +260,27 @@ export class CreateUnitComponent {
         this.UnitDataFormGroup.get('Mode_of_Allotment')!.setValue(data.v_MODE_OF_ALLOCATION);
         const modeOfAllotment = data.v_MODE_OF_ALLOCATION;
         if (modeOfAllotment === 'HP') {
-        this.enableFormControls();
-      } else {
-        this.disableFormControls();
-      }
+          this.enableFormControls();
+        } else {
+          this.disableFormControls();
+        }
 
-      this.UnitFormGroup.get('Mode_of_Allotment')!.setValue(data.v_MODE_OF_ALLOCATION);
+        this.UnitFormGroup.get('Mode_of_Allotment')!.setValue(data.v_MODE_OF_ALLOCATION);
         const modeOfAllotmentsfsother = data.v_MODE_OF_ALLOCATION;
         if (modeOfAllotmentsfsother === 'SFS') {
           this.disableFormControlsID_due_date();
 
-      } else {
-        this.enableFormControlsID_due_date();
+        } else {
+          this.enableFormControlsID_due_date();
 
-      }
+        }
 
-      this.UnitDataFormGroup.get('unit_type')!.setValue(data.v_UNIT_TYPE);
+        this.UnitDataFormGroup.get('unit_type')!.setValue(data.v_UNIT_TYPE);
         const typename = data.v_UNIT_TYPE;
         if (typename === 'Flat') {
           this.disableFormControlsRoadfacing();
         } else {
-        this.enableFormControlsRoadfacing();
+          this.enableFormControlsRoadfacing();
         }
 
         this.sfsDataFormGroup.patchValue({

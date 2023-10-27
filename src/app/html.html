@@ -1,0 +1,488 @@
+<form [formGroup]="UnitDataFormGroup" class="UnitDataFormGroup">
+    <div class="UnitDataForm-v_UNIT_AC_NO">
+        <label>Unit Account Number</label>
+        <input class="form-control" type="text" formControlName="v_UNIT_AC_NO" required>
+    </div>
+
+    <div class="UnitDataForm-division">
+        <label>Name of the Division</label>
+        <input class="form-control" type="text" formControlName="division" readonly>
+    </div>
+
+    <div class="UnitDataForm-scheme_name">
+        <label>Scheme Name</label>
+        <input class="form-control" type="text" formControlName="scheme_name" readonly>
+    </div>
+
+    <div class="UnitDataForm-Type">
+        <label>Type</label>
+        <input class="form-control" type="text" formControlName="Type" readonly>
+    </div>
+
+    <div class="UnitDataForm-unit_type">
+        <label>Unit Type</label>
+        <input class="form-control" type="text" formControlName="unit_type" readonly>
+    </div>
+
+    <div class="UnitDataForm-v_UNIT_NO">
+        <label>Unit No</label>
+        <input class="form-control" type="text" formControlName="v_UNIT_NO" required>
+    </div>
+
+    <div class="UnitDataForm-v_BLOCK_NO">
+        <label>Block No</label>
+        <input class="form-control" type="text" formControlName="v_BLOCK_NO" required>
+    </div>
+
+    <div class="UnitDataForm-v_FLOOR_NO">
+        <label>Floor No</label>
+        <input class="form-control" type="text" formControlName="v_FLOOR_NO" required>
+    </div>
+
+    <div class="UnitDataForm-gdq">
+        <label>GDQ</label>
+        <select class="form-select" formControlName="gdq" required>
+            <option value="Yes">Yes</option>
+            <option value="No" selected>No</option>
+        </select>
+    </div>
+
+    <div class="UnitDataForm-v_RESERVATION_CATEGORY">
+        <label>Reservation Category</label>
+        <div class="input-group">
+            <div class="input-group-text"></div>
+            <input type="text" class="form-control" formControlName="v_RESERVATION_CATEGORY">
+        </div>
+    </div>
+
+    <div class="UnitDataForm-v_PRIORITY">
+        <label>Priority Basis</label>
+        <div class="input-group">
+            <div class="input-group-text"></div>
+            <input type="text" class="form-control" formControlName="v_PRIORITY">
+        </div>
+    </div>
+
+    <div class="UnitDataForm-v_UNIT_ALLOTTED_STATUS">
+        <label>Alloted Status</label>
+        <select class="form-select" formControlName="v_UNIT_ALLOTTED_STATUS">
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select>
+    </div>
+
+    <div class="UnitDataForm-Mode_of_Allotment">
+        <label class="label-ellipsis" for="v_MODE_OF_ALLOCATION" data-toggle="tooltip" data-placement="top"
+            title="Mode of Allotment">Mode of Allotment</label>
+        <input class="form-control" type="text" formControlName="Mode_of_Allotment" readonly>
+    </div>
+
+    <div class="UnitDataForm-">
+        <label>CATEGORY</label>
+        <select class="form-select" formControlName="v_CATEGORY">
+            <option value="S">S</option>
+            <option value="O">O</option>
+        </select>
+    </div>
+
+    <div class="UnitDataForm-v_DATE_OF_ALLOTMENT">
+        <label>Date of Allotment</label>
+        <input class="form-control" type="date" formControlName="v_DATE_OF_ALLOTMENT" required>
+    </div>
+
+    <div class="UnitDataForm-v_UNIT_COST">
+        <label>Unit Cost</label>
+        <input class="form-control" type="text" formControlName="v_UNIT_COST" required>
+    </div>
+
+    <div class="UnitDataForm-v_FREEZED_DATE">
+        <label>Freezed Rate</label>
+        <select class="form-select" formControlName="v_FREEZED_DATE">
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select>
+    </div>
+
+    <div class="UnitDataForm-v_INITIAL_DEPOSIT">
+        <label>Initial Deposit</label>
+        <input class="form-control" type="text" formControlName="v_INITIAL_DEPOSIT">
+    </div>
+
+    <div class="UnitDataForm-v_EMI">
+        <label>EMI</label>
+        <input class="form-control" type="text" formControlName="v_EMI" required>
+    </div>
+
+    <div class="UnitDataForm-v_EMI_START_DATE">
+        <label>EMI Start Date</label>
+        <input class="form-control" type="date" formControlName="v_EMI_START_DATE" required>
+    </div>
+
+    <div class="UnitDataForm-v_UNIT_READY_DATE">
+        <label>Unit Ready Date</label>
+        <input class="form-control" type="date" formControlName="v_UNIT_READY_DATE" required>
+    </div>
+
+    <div class="UnitDataForm-v_ID_DUE_DATE_HP">
+        <label class="label-ellipsis" data-toggle="tooltip" data-placement="top"
+            title="{{UnitDataFormGroup.get('Mode_of_Allotment')!.value === 'HP' ? 'ID Due Date' : (UnitDataFormGroup.get('Mode_of_Allotment')!.value === 'OR' ? 'Payment Due Date' : 'ID Due Date')}}">{{
+            UnitDataFormGroup.get('Mode_of_Allotment')!.value === 'HP' ? 'ID Due Date' :
+            (UnitDataFormGroup.get('Mode_of_Allotment')!.value === 'OR' ? 'Payment Due Date' : 'ID Due Date')
+            }}</label>
+        <input class="form-control" type="date" formControlName="v_ID_DUE_DATE_HP" required>
+    </div>
+
+    <div class="UnitDataForm-v_SF_LOAN_SG">
+        <label>SF loan SG</label>
+        <select class="form-select" formControlName="v_SF_LOAN_SG" required>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select>
+    </div>
+
+    <div class="UnitDataForm-v_AB_ISSUED_DATE">
+        <label>A&B Issued Date</label>
+        <input class="form-control" type="date" formControlName="v_AB_ISSUED_DATE" required>
+    </div>
+
+    <div class="UnitDataForm-v_LOAN_SANC_DATE">
+        <label class="label-ellipsis" data-toggle="tooltip" data-placement="top" title="Loan Sanc.Date">Loan
+            Sanc.Date</label>
+        <input class="form-control" type="date" formControlName="v_LOAN_SANC_DATE" required>
+    </div>
+
+    <div class="UnitDataForm-v_UNIT_HANDING_OVER">
+        <label class="label-ellipsis" data-toggle="tooltip" data-placement="top" title="Unit Handing Over">Unit
+            Handing Over</label>
+        <input class="form-control" type="date" formControlName="v_UNIT_HANDING_OVER" required>
+    </div>
+
+    <div class="UnitDataForm-v_PLOT_HANDING_OVER">
+        <label>Plot Handing Over</label>
+        <input class="form-control" type="date" formControlName="v_PLOT_HANDING_OVER" required>
+    </div>
+
+    <div class="UnitDataForm-v_ACTUAL_EXTENT">
+        <label>Actual Extent</label>
+        <input class="form-control" type="text" formControlName="v_ACTUAL_EXTENT" required>
+    </div>
+
+    <div class="UnitDataForm-v_ROAD_FACING">
+        <label>Road facing</label>
+        <select class="form-select" formControlName="v_ROAD_FACING" required>
+            <option value="NB">NB</option>
+            <option value="SF">SF</option>
+            <option value="EF">EF</option>
+        </select>
+    </div>
+
+    <div class="UnitDataForm-v_CORNER_PLOT_STATUS">
+        <label>Corner</label>
+        <select class="form-select" formControlName="v_CORNER_PLOT_STATUS" required>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select>
+    </div>
+
+    <div class="UnitDataForm-v_DOOR_FACING">
+        <label>Door Facing</label>
+        <select class="form-select" formControlName="v_DOOR_FACING" required>
+            <option value="N">N</option>
+            <option value="E">E</option>
+            <option value="W">W</option>
+            <option value="S">S</option>
+        </select>
+    </div>
+
+    <div class="UnitDataForm-v_LIVE_STATUS">
+        <label>Live Status</label>
+        <select class="form-select" formControlName="v_LIVE_STATUS" required>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select>
+    </div>
+
+    <div class="UnitDataForm-v_RIPED_STATUS">
+        <label>Riped Status</label>
+        <select class="form-select" formControlName="v_RIPED_STATUS" required>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select>
+    </div>
+
+    <div class="UnitDataForm-v_FC_PAID_STATUS">
+        <label class="label-ellipsis" data-toggle="tooltip" data-placement="top" title="FC Paid Status">FC Paid
+            Status</label>
+        <select class="form-select" formControlName="v_FC_PAID_STATUS" required>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select>
+    </div>
+
+    <div class="UnitDataForm-v_DRAFT_DEED_ISSUED_ON">
+        <label>Draft Deed Issued on</label>
+        <input class="form-control" type="date" formControlName="v_DRAFT_DEED_ISSUED_ON" required>
+    </div>
+
+    <div class="UnitDataForm-v_FC_PAID_BUT_SALE_DEED_NOT_ISSUED">
+        <label>FC paid but Sales Deed not issued(Reason)</label>
+        <select class="form-select" formControlName="v_FC_PAID_BUT_SALE_DEED_NOT_ISSUED">
+            <option value="legal_heirs_issue">Legal Heirs Issue</option>
+            <option value="power_of_attorney_subsequent_purchaser">Power of Attorney/Subsequent Purchaser</option>
+            <option value="noc_from_govt">NOC from Govt</option>
+            <option value="intimation_sent_but_returned">Intimation sent but returned</option>
+            <option value="intimation_received_but_allottee_not_turned_up">Intimation received but allottee not turned
+                up</option>
+            <option value="high_stamp_duty">High Stamp Duty</option>
+            <option value="living_abroad">Living Abroad</option>
+            <option value="court_cases">Court Cases</option>
+            <option value="recently_paid_and_sale_deed_under_process">Recently Paid and Sale Deed Under Process
+            </option>
+            <option value="draft_sale_deed_issued">Draft Sale Deed Issued</option>
+        </select>
+    </div>
+
+    <div class="UnitDataForm-v_RIPED_BUT_COST_NOT_FULLY_PAID">
+        <label>Ripe but cost not fully paid(Reason)</label>
+        <select class="form-select" formControlName="v_RIPED_BUT_COST_NOT_FULLY_PAID">
+            <option value="court_case_dlc_due">Court Case - DLC Due</option>
+            <option value="sfs_dlc_due">SFS - DLC Due</option>
+            <option value="general_public_dlc_due">General Public - DLC Due</option>
+            <option value="government_servant_dlc_due">Government Servant - DLC Due</option>
+            <option value="intimation_received_but_allottee_not_turned_up">Intimation received but allottee not turned
+                up</option>
+            <option value="subsequent_purchaser">Subsequent Purchaser</option>
+            <option value="power_of_attorney">Power of Attorney</option>
+            <option value="allottee_not_traceable">Allottee Not Traceable</option>
+            <option value="court_case">Court Case</option>
+            <option value="draft_sale_deed_issued">Draft Sale Deed Issued</option>
+        </select>
+    </div>
+
+    <div class="UnitDataForm-v_SALE_DEED_STATUS">
+        <label>Sale Deed Status</label>
+        <select class="form-select" formControlName="v_SALE_DEED_STATUS">
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select>
+    </div>
+
+    <div class="UnitDataForm-v_SALE_DEED_DATE">
+        <label>Sale Deed Date</label>
+        <input class="form-control" type="date" formControlName="v_SALE_DEED_DATE" required>
+    </div>
+</form>
+
+<style>
+    .UnitDataFormGroup {
+        display: grid;
+        grid-template-columns: repeat(16, 1fr);
+        /* 16 columns */
+        gap: 10px;
+        /* Adjust the gap between grid items */
+    }
+
+    .UnitDataFormGroup {
+        display: grid;
+        grid-template-columns: repeat(16, 1fr);
+        /* 16 columns */
+        gap: 10px;
+        /* Adjust the gap between grid items */
+    }
+
+    /* Style individual form elements within the grid */
+    .UnitDataForm-v_UNIT_AC_NO {
+        grid-column: span 3;
+        padding: 5px;
+    }
+
+    .UnitDataForm-division {
+        grid-column: span 2;
+        padding: 5px;
+    }
+
+    .UnitDataForm-scheme_name {
+        grid-column: span 2;
+        padding: 5px;
+    }
+
+    .UnitDataForm-Type {
+        grid-column: span 1;
+        padding: 5px;
+    }
+
+    .UnitDataForm-unit_type {
+        grid-column: span 1;
+        padding: 5px;
+    }
+
+    .UnitDataForm-v_UNIT_NO {
+        grid-column: span 2;
+        padding: 5px;
+    }
+
+    .UnitDataForm-v_BLOCK_NO {
+        grid-column: span 1;
+        padding: 5px;
+    }
+
+    .UnitDataForm-v_FLOOR_NO {
+        grid-column: span 1;
+        padding: 5px;
+    }
+
+    .UnitDataForm-gdq {
+        grid-column: span 1;
+        padding: 5px;
+    }
+
+    .UnitDataForm-v_RESERVATION_CATEGORY {
+        grid-column: span 4;
+        padding: 5px;
+    }
+
+    .UnitDataForm-v_PRIORITY {
+        grid-column: span 3;
+        padding: 5px;
+    }
+
+    .UnitDataForm-v_UNIT_ALLOTTED_STATUS {
+        grid-column: span 1;
+        padding: 5px;
+    }
+
+    .UnitDataForm-Mode_of_Allotment {
+        grid-column: span 1;
+        padding: 5px;
+    }
+
+    .UnitDataForm-v_CATEGORY {
+        grid-column: span 1;
+        padding: 5px;
+    }
+
+    .UnitDataForm-v_DATE_OF_ALLOTMENT {
+        grid-column: span 2;
+        padding: 5px;
+    }
+
+    .UnitDataForm-v_UNIT_COST {
+        grid-column: span 2;
+        padding: 5px;
+    }
+
+    .UnitDataForm-v_FREEZED_DATE {
+        grid-column: span 1;
+        padding: 5px;
+    }
+
+    .UnitDataForm-v_INITIAL_DEPOSIT {
+        grid-column: span 1;
+        padding: 5px;
+    }
+
+    .UnitDataForm-v_EMI {
+        grid-column: span 1;
+        padding: 5px;
+    }
+
+    .UnitDataForm-v_EMI_START_DATE {
+        grid-column: span 2;
+        padding: 5px;
+    }
+
+    .UnitDataForm-v_UNIT_READY_DATE {
+        grid-column: span 2;
+        padding: 5px;
+    }
+
+    .UnitDataForm-v_ID_DUE_DATE_HP {
+        grid-column: span 1;
+        padding: 5px;
+    }
+
+    .UnitDataForm-v_SF_LOAN_SG {
+        grid-column: span 1;
+        padding: 5px;
+    }
+
+    .UnitDataForm-v_AB_ISSUED_DATE {
+        grid-column: span 2;
+        padding: 5px;
+    }
+
+    .UnitDataForm-v_LOAN_SANC_DATE {
+        grid-column: span 1;
+        padding: 5px;
+    }
+
+    .UnitDataForm-v_UNIT_HANDING_OVER {
+        grid-column: span 1;
+        padding: 5px;
+    }
+
+    .UnitDataForm-v_PLOT_HANDING_OVER {
+        grid-column: span 2;
+        padding: 5px;
+    }
+
+    .UnitDataForm-v_ACTUAL_EXTENT {
+        grid-column: span 2;
+        padding: 5px;
+    }
+
+    .UnitDataForm-v_ROAD_FACING {
+        grid-column: span 1;
+        padding: 5px;
+    }
+
+    .UnitDataForm-v_CORNER_PLOT_STATUS {
+        grid-column: span 1;
+        padding: 5px;
+    }
+
+    .UnitDataForm-v_DOOR_FACING {
+        grid-column: span 1;
+        padding: 5px;
+    }
+
+    .UnitDataForm-v_LIVE_STATUS {
+        grid-column: span 1;
+        padding: 5px;
+    }
+
+    .UnitDataForm-v_RIPED_STATUS {
+        grid-column: span 1;
+        padding: 5px;
+    }
+
+    .UnitDataForm-v_FC_PAID_STATUS {
+        grid-column: span 1;
+        padding: 5px;
+    }
+
+    .UnitDataForm-v_DRAFT_DEED_ISSUED_ON {
+        grid-column: span 2;
+        padding: 5px;
+    }
+
+    .UnitDataForm-v_FC_PAID_BUT_SALE_DEED_NOT_ISSUED {
+        grid-column: span 3;
+        padding: 5px;
+    }
+
+    .UnitDataForm-v_RIPED_BUT_COST_NOT_FULLY_PAID {
+        grid-column: span 3;
+        padding: 5px;
+    }
+
+    .UnitDataForm-v_SALE_DEED_STATUS {
+        grid-column: span 1;
+        padding: 5px;
+    }
+
+    .UnitDataForm-v_SALE_DEED_DATE {
+        grid-column: span 2;
+        padding: 5px;
+    }
+</style>
