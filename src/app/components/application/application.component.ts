@@ -5,16 +5,6 @@ import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { HttpService } from 'src/app/services/http.service';
 
-
-export interface SchemesData {
-  slno: number;
-  division: string;
-  schemecode: string;
-  schemename: string;
-  totalunits: string;
-  ACTION: string;
-}
-
 @Component({
   selector: 'app-application',
   templateUrl: './application.component.html',
@@ -23,7 +13,7 @@ export interface SchemesData {
 export class ApplicationComponent {
 
   allApplicationDataSource!: MatTableDataSource<any>;
-  schemesTableColumns: string[] = ['slno', 'scheme_code', 'scheme', 'splace', 'district', 'unit_type', 'type','ACTION'];
+  schemesTableColumns: string[] = ['slno', 'unitAccountNo', 'applicationNo', 'schemeName', 'type', 'unitType', 'reservationStatus', 'approvalStatus', 'action', 'allotmentOrder'];
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
@@ -33,15 +23,13 @@ export class ApplicationComponent {
 
 
   ngOnInit(): void {
-
     this.fetchDataFromAPI();
   }
 
   fetchDataFromAPI() {
-
-    this.apiService.getAllSchemeAppl().subscribe((response: any) => {
+    this.apiService.getAllAppl().subscribe((response: any) => {
+      console.log(response);
       if (response && response.status === 1 && response.data) {
-
         this.allApplicationDataSource = new MatTableDataSource(response.data);
         this.allApplicationDataSource.paginator = this.paginator;
         this.allApplicationDataSource.sort = this.sort;
@@ -50,7 +38,7 @@ export class ApplicationComponent {
   }
 
 
- applyFilter(event: Event) {
+  applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.allApplicationDataSource.filter = filterValue.trim().toLowerCase();
 

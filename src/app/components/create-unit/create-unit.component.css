@@ -40,3 +40,16 @@
     background-color: #470A3C;
     color: white;
 }
+
+.unitLabel {
+    color: #FFFFFF;
+    margin-right: 1rem;
+}
+
+.unitNo {
+    margin-left: 5px;
+    padding: 5px 10px;
+    color: #FFFFFF;
+    background-color: rgba(217, 217, 217, 0.4);
+    border-radius: 5px;
+}

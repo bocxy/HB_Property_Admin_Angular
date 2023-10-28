@@ -3,8 +3,8 @@
   <div class="d-flex justify-content-between align-items-center"
     style="background-color: #FFC9FE;border-radius: 10px; padding: 1rem;margin-bottom: 1rem;">
     <section class="tab-container">
-      <button class="btn btn-light tab-button" [class.active]="selectedTab === 'Unit'" (click)="selectTab('Unit')">Unit
-        Data</button>
+      <button class="btn btn-light tab-button" [class.active]="selectedTab === 'Unit'"
+        (click)="selectTab('Unit')">Master - Unit</button>
       <button class="btn btn-light tab-button" [class.active]="selectedTab === 'sfs'" (click)="selectTab('sfs')"
         [disabled]="UnitDataFormGroup.get('Mode_of_Allotment')!.value !== 'SFS'">Schedule of Payment</button>
       <button class="btn btn-light tab-button" [class.active]="selectedTab === 'Property'"
@@ -22,8 +22,19 @@
 
   <section class="tab-content">
     <div *ngIf="selectedTab === 'Unit'">
-
       <div class="shadow" style="background-color: #FFC9FE;border-radius: 10px; padding: 1rem;margin-bottom: 1rem;">
+        <div class="d-inline-flex"
+          style="background-color: #06217B;padding: 1rem;border-radius: 10px;margin-bottom: 1rem;">
+          <div class="unitLabel">
+            Total Created<span class="unitNo">{{0}}</span>
+          </div>
+          <div class="unitLabel">
+            Created Units<span class="unitNo">{{0}}</span>
+          </div>
+          <div class="unitLabel">
+            Remaining Units<span class="unitNo">{{0}}</span>
+          </div>
+        </div>
         <form [formGroup]="UnitDataFormGroup" class="row g-2 mt-2">
           <div class="col-3">
             <label>Unit Account Number</label>
@@ -268,6 +279,31 @@
             </select>
           </div>
 
+          <div class="col-2">
+            <label>MC Demand(PM)</label>
+            <input class="form-control" type="text" formControlName="" required>
+          </div>
+
+          <div class="col-2">
+            <label>Maintainence H/O Date</label>
+            <input class="form-control" type="date" formControlName="" required>
+          </div>
+
+          <div class="col-2">
+            <label>Car Parking Demand</label>
+            <input class="form-control" type="text" formControlName="" required>
+          </div>
+
+          <div class="col-2">
+            <label>Car Parking Slot 1</label>
+            <input class="form-control" type="text" formControlName="" required>
+          </div>
+
+          <div class="col-2">
+            <label>Car Parking Slot 2</label>
+            <input class="form-control" type="text" formControlName="" required>
+          </div>
+
           <div class="col-4">
             <label>Ripe but cost not fully paid(Reason)</label>
             <select class="form-select" formControlName="v_RIPED_BUT_COST_NOT_FULLY_PAID">
@@ -297,8 +333,90 @@
             <label>Sale Deed Date</label>
             <input class="form-control" type="date" formControlName="v_SALE_DEED_DATE" required>
           </div>
+
         </form>
       </div>
+
+      <div class="shadow" style="background-color: #FFC9FE;border-radius: 10px; padding: 1rem;margin-bottom: 1rem;">
+        <div class="row g-2 mt-2">
+          <p class="col-12" style="font-weight: bold;font-size: large;">Generate Documents</p>
+          <div class="col-1">
+            <label>Application</label>
+            <div>
+              <button class="form-control btn download-btn" style="width: 5rem;">View</button>
+            </div>
+          </div>
+
+          <div class="col-1">
+            <label>Allotment Order</label>
+            <div>
+              <button class="form-control btn download-btn" style="width: 5rem;">View</button>
+            </div>
+          </div>
+
+          <div class="col-1">
+            <label>LCS Agreement</label>
+            <div>
+              <button class="form-control btn download-btn" style="width: 6rem;">Generate</button>
+            </div>
+          </div>
+
+          <div class="col-1">
+            <label>A & B Loan</label>
+            <div>
+              <button class="form-control btn download-btn" style="width: 6rem;">Generate</button>
+            </div>
+          </div>
+
+          <div class="col-2">
+            <label>Field Measurement Book</label>
+            <div>
+              <button class="form-control btn download-btn" style="width: 6rem;">Generate</button>
+            </div>
+          </div>
+
+          <div class="col-2">
+            <label>Handing over Report</label>
+            <div>
+              <button class="form-control btn download-btn" style="width: 6rem;">Generate</button>
+            </div>
+          </div>
+
+          <div class="col-1">
+            <label>Draft Sale Deed</label>
+            <div>
+              <button class="form-control btn download-btn" style="width: 6rem;">Generate</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="shadow" style="background-color: #FFC9FE;border-radius: 10px; padding: 1rem;margin-bottom: 1rem;">
+        <div class="row g-2 mt-2">
+          <p class="col-12" style="font-weight: bold;font-size: large;">Documents Download</p>
+          <div class="col-2">
+            <label>In Principal letter for Loan</label>
+            <div>
+              <button class="form-control btn download-btn" style="width: 7rem;">Download</button>
+            </div>
+          </div>
+
+          <div class="col-3">
+            <label>NOC (Govt./Bank/Financial Institutions)</label>
+            <div>
+              <button class="form-control btn download-btn" style="width: 7rem;">Download</button>
+            </div>
+          </div>
+
+          <div class="col-2">
+            <label>Sale Deed Requisition Letter</label>
+            <div>
+              <button class="form-control btn download-btn" style="width: 7rem;">Download</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 

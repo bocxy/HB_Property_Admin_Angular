@@ -131,23 +131,21 @@ export class HttpService {
   }
 
 
-
-
-  getAllSchemeAppl(): Observable<any> {
-    const url = `${this.apiUrl}getAllSchemeWithApplication`;
-    const requestBody = {  };
+  getAllAppl(): Observable<any[]> {
+    const url = `${this.apiUrl}getAllCustomerApp`;
+    const requestBody = {};
     return this.http.post<any>(url, requestBody);
   }
 
-  getSchemeAppl(scheme:string): Observable<any> {
+  getSchemeAppl(scheme: string): Observable<any> {
     const url = `${this.apiUrl}getAllApplicationsOfOneScheme`;
-    const requestBody = { scheme:scheme };
+    const requestBody = { scheme: scheme };
     return this.http.post<any>(url, requestBody);
   }
 
-  getApplform(id:string): Observable<any> {
+  getApplform(id: string): Observable<any> {
     const url = `${this.apiUrl}getByIdCustomerApp`;
-    const requestBody = { id:id };
+    const requestBody = { id: id };
     return this.http.post<any>(url, requestBody);
   }
 

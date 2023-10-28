@@ -37,50 +37,62 @@
             </ng-container>
 
 
-            <!-- Division Column -->
-            <ng-container matColumnDef="scheme_code">
-                <th mat-header-cell *matHeaderCellDef mat-sort-header> Scheme Type Code </th>
-                <td mat-cell *matCellDef="let scheme"> {{scheme.scheme_code}} </td>
+            <!-- Unit Account Number Column -->
+            <ng-container matColumnDef="unitAccountNo">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Unit Account Number </th>
+                <td mat-cell *matCellDef="let scheme"> {{scheme.unitAccountNo}} </td>
+            </ng-container>
+
+            <!-- Application Number Column -->
+            <ng-container matColumnDef="applicationNo">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Application Number </th>
+                <td mat-cell *matCellDef="let scheme"> {{scheme.applicationNo}} </td>
             </ng-container>
 
             <!-- Scheme Name Column -->
-            <ng-container matColumnDef="scheme">
-                <th mat-header-cell *matHeaderCellDef mat-sort-header> SName </th>
-                <td mat-cell *matCellDef="let scheme"> {{scheme.scheme}} </td>
+            <ng-container matColumnDef="schemeName">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Scheme Name </th>
+                <td mat-cell *matCellDef="let scheme"> {{scheme.schemeName}} </td>
             </ng-container>
 
-            <!-- Scheme Name Column -->
-            <ng-container matColumnDef="splace">
-                <th mat-header-cell *matHeaderCellDef mat-sort-header> SPlace </th>
-                <td mat-cell *matCellDef="let scheme"> {{scheme.splace}} </td>
-            </ng-container>
-
-            <!-- Scheme Name Column -->
-            <ng-container matColumnDef="district">
-                <th mat-header-cell *matHeaderCellDef mat-sort-header> District </th>
-                <td mat-cell *matCellDef="let scheme"> {{scheme.district}} </td>
-            </ng-container>
-
-            <!-- Scheme Name Column -->
-            <ng-container matColumnDef="unit_type">
-                <th mat-header-cell *matHeaderCellDef mat-sort-header> Unit Type </th>
-                <td mat-cell *matCellDef="let scheme"> {{scheme.unit_type}} </td>
-            </ng-container>
-
-            <!-- Scheme Name Column -->
+            <!-- Type Column -->
             <ng-container matColumnDef="type">
                 <th mat-header-cell *matHeaderCellDef mat-sort-header> Type </th>
                 <td mat-cell *matCellDef="let scheme"> {{scheme.type}} </td>
             </ng-container>
 
+            <!-- Unit Type Column -->
+            <ng-container matColumnDef="unitType">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Unit Type </th>
+                <td mat-cell *matCellDef="let scheme"> {{scheme.unitType}} </td>
+            </ng-container>
+
+            <!-- Reservation Status Column -->
+            <ng-container matColumnDef="reservationStatus">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Reservation Status </th>
+                <td mat-cell *matCellDef="let scheme"> {{scheme.reservationStatus}} </td>
+            </ng-container>
+
+            <!-- Approval Status Column -->
+            <ng-container matColumnDef="approvalStatus">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Approval Status </th>
+                <td mat-cell *matCellDef="let scheme"> {{scheme.approvalStatus}} </td>
+            </ng-container>
+
             <!-- Action Column -->
-            <ng-container matColumnDef="ACTION">
+            <ng-container matColumnDef="action">
                 <th mat-header-cell *matHeaderCellDef> Action </th>
-                <td mat-cell *matCellDef="let scheme" class="p-0">
-                    <div class="d-flex justify-content-evenly">
-                        <a [routerLink]="['/property/home/application-list', scheme.scheme]"
-                            style="color: #470A3C;"><span class="material-symbols-rounded">visibility</span></a>
-                    </div>
+                <td mat-cell *matCellDef="let scheme">
+                    <a [routerLink]="['/property/home/application-list', scheme.scheme]" style="color: #470A3C;"><span
+                            class="material-symbols-rounded">visibility</span></a>
+                </td>
+            </ng-container>
+
+            <!-- Allotment Order Column -->
+            <ng-container matColumnDef="allotmentOrder">
+                <th mat-header-cell *matHeaderCellDef> Allotment Order </th>
+                <td mat-cell *matCellDef="let scheme">
+                    <button class="btn" style="background-color: #470A3C;color: #ffffff;">Generate</button>
                 </td>
             </ng-container>
 
